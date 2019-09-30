@@ -28,7 +28,7 @@
                     </tr>
                     <tr>
                         <td>Nombre</td>
-                        <td><?php echo $fila->PacNombres . "" . $fila->PacApellidos; ?></td>
+                        <td><?php echo $fila->PacNombres . " " . $fila->PacApellidos; ?></td>
                     </tr>
                     <tr><th colspan="2">Datos del Médico</th></tr>
                     <tr>
@@ -37,7 +37,7 @@
                     </tr>
                     <tr>
                         <td>Nombre</td>
-                        <td><?php echo $fila->MedNombres . "" . $fila->MedApellidos; ?></td>
+                        <td><?php echo $fila->MedNombres . " " . $fila->MedApellidos; ?></td>
                     </tr>
                     <tr><th colspan="2">Datos de la Cita</th></tr>
                     <tr>
@@ -66,7 +66,7 @@
                     </tr>
                     <tr>
                         <td>Observaciones</td>
-                        <td><?php echo $fila->CitObservaiones; ?></td>
+                        <td><?php echo $fila->CitObservaciones; ?></td>
                     </tr>
                 </table>
             </div>

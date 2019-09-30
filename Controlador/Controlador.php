@@ -24,7 +24,7 @@ class Controlador {
 //       require_once 'Vista/html/confirmarCita.php';
         
 //        $result = $gestorCita->consultaPrueba();
-         //header("Location: " . 'Vista/html/confirmarCita.php');
+        // header("Location: " . 'Vista/html/confirmarCita.php');
          require_once 'Vista/html/confirmarCita.php';
     }
 
