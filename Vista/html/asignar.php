@@ -5,6 +5,7 @@
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
             <title>Asignar Cita</title>
             <link rel="stylesheet" type="text/css" href="../css/estilos.css"/>
+            <script src="../jquery/jquery-1.8.1.min.js" type="text/javascript"></script>
     </head>
     <body>
         <div id="contenedor">

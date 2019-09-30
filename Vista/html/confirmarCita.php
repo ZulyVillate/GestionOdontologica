@@ -4,7 +4,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
             <title>Sistema de Gestión Odontológica</title>
-            <link rel="stylesheet" type="text/css" href="../css/estilos.css"/>
+            <link rel="stylesheet" type="text/css" href="Vista/css/estilos.css"/>
     </head>
     <body>
         <div id="contenedor">

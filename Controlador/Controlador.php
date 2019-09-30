@@ -35,10 +35,9 @@ class Controlador {
     }
     
     public function cancelarCitas($doc){
-        $gestorCita = new GestorCita();
+        $gestorCita = new GestorCita(); 
         $result = $gestorCita->consultarCitasPorDocumento($doc);
         require_once 'Vista/html/cancelarCitas.php';
-        
     }
 
 }
