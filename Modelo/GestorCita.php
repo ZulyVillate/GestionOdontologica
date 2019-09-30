@@ -1,37 +1,48 @@
 <?php
+
 require_once 'Controlador/Controlador.php';
 require_once 'Modelo/GestorCita.php';
 require_once 'Modelo/Cita.php';
 require_once 'Modelo/Paciente.php';
-require_once 'Modelo/Conexion-php';
+require_once 'Modelo/Conexion.php';
+
 class GestorCita {
 
     public function agregarCita(Cita $cita) {
         $conexion = new Conexion();
         $conexion->abrir();
         $fecha = $cita->ObtenerFecha();
-        $hora = $cita->obtenerPaciente();
+        $hora = $cita->obtenerHora();
+        $paciente = $cita->obtenerPaciente();
         $medico = $cita->obtenerMedico();
         $consultorio = $cita->obtenerConsultorio();
         $estado = $cita->obtenerEstado();
-        $observeaciones = $cita->obtenerObservaciones();
-        $sql = "INSERT INTO citas VALUES(null, '$fecha','$hora','$medico','$consultorio','$estado','$observeaciones')";
-        $conexion->consulta($sql);
+        $observaciones = $cita->obtenerObservaciones();
+        $sql = "INSERT INTO citas VALUES(null,'$fecha','$hora','$paciente','$medico','$consultorio','$estado','$observaciones')";
+        $conexion->consultar($sql);
         $citaId = $conexion->obtenerCitaId();
         $conexion->cerrar();
         return $citaId;
     }
+
+//    public function consultaPrueba() {
+//        $conexion = new Conexion();
+//        $conexion->abrir();
+//        $resultado = $conexion->consultarPrueba();
+//        $conexion->cerrar();
+//        return $resultado;
+//    }
 
     public function consultarCitaPorId($id) {
         $conexion = new Conexion();
         $conexion->abrir();
         $sql = "SELECT pacientes.*,medicos.*,consultorios.*, citas.*
               FROM pacientes,medicos,consultorios,citas
-              WHERE citas.CitPacientes = pacientes.PacIdentificacion
+              WHERE citas.CitPaciente = pacientes.PacIdentificacion
               AND citas.CitMedico = medicos.MedIdentificacion
               AND citas.CitConsultorio = consultorios.ConNumero
               AND citas.CitNumero = $id";
-        $conexion->consulta($sql);
+        $conexion->consultar($sql);
         $result = $conexion->obtenerResult();
         $conexion->cerrar();
         return $result;
@@ -44,7 +55,7 @@ class GestorCita {
                 FROM citas
                 WHERE CitPaciente = '$doc'
                 AND CitEstado = 'Solicitada'";
-        $conexion->consulta($sql);
+        $conexion->consultar($sql);
         $result = $conexion->obtenerResult();
         $conexion->cerrar();
         return $result;
@@ -56,7 +67,7 @@ class GestorCita {
         $sql = "SELECT *
                FROM pacientes
                WHERE PacIdentificacion = '$doc'";
-        $conexion->consulta($sql);
+        $conexion->consultar($sql);
         $result = $conexion->obtenerResult();
         $conexion->cerrar();
         return $result;
@@ -71,7 +82,7 @@ class GestorCita {
         $fecha = $paciente->obtenerFechaNacimiento();
         $sexo = $paciente->obtenerSexo();
         $sql = "INSERT INTO pacientes VALUES('$identificacion','$nombres','$apellidos','$fecha','$sexo')";
-        $conexion->consulta($sql);
+        $conexion->consultar($sql);
         $filasAfectadas = $conexion->obtenerFilasAfectadas();
         $conexion->cerrar();
         return $filasAfectadas;
@@ -82,7 +93,7 @@ class GestorCita {
         $conexion->abrir();
         $sql = "SELECT *
                 FROM medicos";
-        $conexion->consulta($sql);
+        $conexion->consultar($sql);
         $result = $conexion->obtenerResult();
         $conexion->cerrar();
         return $result;

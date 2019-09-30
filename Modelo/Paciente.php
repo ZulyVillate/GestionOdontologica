@@ -3,7 +3,7 @@ require_once 'Controlador/Controlador.php';
 require_once 'Modelo/GestorCita.php';
 require_once 'Modelo/Cita.php';
 require_once 'Modelo/Paciente.php';
-require_once 'Modelo/Conexion-php';
+require_once 'Modelo/Conexion.php';
 class Paciente {
    private $identificacion;
     private $nombres;

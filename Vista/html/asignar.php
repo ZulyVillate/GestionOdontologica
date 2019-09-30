@@ -13,14 +13,14 @@
             </div> 
             <ul id="menu"> 
                 <li><a href="index.php">Inicio</a></li>
-                <li class="activa"><a href="index.php?accion=asignar">Asignar cita</a></li>
-                <li><a href="index.php?accion=consultar">Consultar cita</a></li>
-                <li><a href="index.php?accion=cancelar">Cancelar cita</a></li>
+                <li class="activa"><a href="../../index.php?accion=asignar">Asignar cita</a></li>
+                <li><a href="../../index.php?accion=consultar">Consultar cita</a></li>
+                <li><a href="../../index.php?accion=cancelar">Cancelar cita</a></li>
             </ul>
             <div id="contenido">
                 <h2>Asignar cita</h2>
 
-                <form action="index.php?accion=guardarCita" method="post" id="frmasignar">
+                <form action="../../index.php?accion=guardarCita" method="post" id="frmasignar">
                     <table>
                         <tr>
                             <td>Documento del paciente</td>
