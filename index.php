@@ -41,6 +41,11 @@
             $controlador->verPagina('Vista/html/cancelar.php');
         } else if ($GET["accion"] == "guardarCita") {
             $controlador->agregarCita($_POST["asignarDocumento"],$_POST["medico"],$_POST["fecha"],$_POST["hora"],$_POST["consultorio"]);
+        } else if ($GET["accion"] == "consultarCita") {
+            $controlador->consultarCitas($_POST["consultarDocumento"]);
+        }
+        else if ($GET["accion"] == "cancelarCita") {
+            $controlador->cancelarCitas($_POST["cancelarDocumento"]);
         }
         else {
             $controlador->verPagina('Vista/html/inicio.php');
