@@ -54,6 +54,8 @@
                 $controlador->consultarCitas($_POST["consultarDocumento"]);
             } else if ($_GET["accion"] == "cancelarCita") {
                 $controlador->cancelarCitas($_POST["cancelarDocumento"]);
+            }else if ($_GET["accion"] == "consultarPaciente") {
+                $controlador->consultarPaciente($_GET["documento"]);
             } else {
                 $controlador->verPagina('Vista/html/inicio.php');
             }

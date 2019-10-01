@@ -20,7 +20,7 @@
             <div id="contenido">
                 <h2>Información General</h2>
                 <p> El<strong> Sistema de Gestión Odontológica </Strong> permite administrar el manejo de
-                    la información de los padentes, tratamientos y atas, a través de una interface amigable.</p>
+                    la información de los pacientes, tratamientos y otros, a través de una interface amigable.</p>
                 <p>El Sistema de Gestión Odontológica cuenta con las siguientes secciones
                     <ul>
                         <li>Asignar Cita</li>

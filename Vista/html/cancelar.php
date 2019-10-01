@@ -5,6 +5,8 @@
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
             <title>Sistema de Gestión Odontológica</title>
             <link rel="stylesheet" type="text/css" href="../css/estilos.css"/>
+            <script src="../jquery/jquery-1.8.1.min.js" type="text/javascript"></script>
+            <script src="../js/script.js" type="text/javascript"></script>
     </head>
     <body>
         <div id="contenedor">
@@ -19,7 +21,7 @@
             </ul>
             <div id="contenido">
                 <h2>Cancelar Cita</h2>
-                <form action="index.php?accion=cancelarCita" method="post" id="frmcancelar">
+                <form action="../../index.php?accion=cancelarCita" method="post" id="frmcancelar">
                     <table>
                         <tr>
                             <td>Documento del paciente</td>

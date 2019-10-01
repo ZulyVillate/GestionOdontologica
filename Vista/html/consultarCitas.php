@@ -11,7 +11,7 @@
             <table>
                 <tr><th>Número</th><th>Fecha</th><th>Hora</th></tr>
                 <?php
-                while ($fila = $result->fetch_objetc()) {
+                while ($fila = $result->fetch_object()) {
                     ?>
                     <tr>
                         <td><?php echo $fila->CitNumero; ?></td>

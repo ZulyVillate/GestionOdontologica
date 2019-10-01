@@ -13,8 +13,8 @@ class Controlador {
     public function verPagina($ruta) {
 //        require_once $ruta;
         //require_once($_SERVER['DOCUMENT_ROOT']."//GestionOdontologica//".$ruta);
-           header("Location: " . $ruta);
-        }
+        header("Location: " . $ruta);
+    }
 
     public function agregarCita($doc, $med, $fec, $hor, $con) {
         $cita = new Cita(null, $fec, $hor, $doc, $med, $con, "Solicitada", "Ninguna");
@@ -22,10 +22,9 @@ class Controlador {
         $id = $gestorCita->agregarCita($cita);
         $result = $gestorCita->consultarCitaPorId($id);
 //       require_once 'Vista/html/confirmarCita.php';
-        
 //        $result = $gestorCita->consultaPrueba();
         // header("Location: " . 'Vista/html/confirmarCita.php');
-         require_once 'Vista/html/confirmarCita.php';
+        require_once 'Vista/html/confirmarCita.php';
     }
 
     public function consultarCitas($doc) {
@@ -33,11 +32,17 @@ class Controlador {
         $result = $gestorCita->consultarCitasPorDocumento($doc);
         require_once 'Vista/html/consultarCitas.php';
     }
-    
-    public function cancelarCitas($doc){
-        $gestorCita = new GestorCita(); 
+
+    public function cancelarCitas($doc) {
+        $gestorCita = new GestorCita();
         $result = $gestorCita->consultarCitasPorDocumento($doc);
         require_once 'Vista/html/cancelarCitas.php';
+    }
+
+    public function ConsultarPaciente($doc) {
+        $gestorCita = new GestorCita();
+        $result = $gestorCita->consultarPaciente($doc);
+        require_once "Vista/html/consultarPaciente.php";
     }
 
 }
