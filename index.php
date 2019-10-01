@@ -56,6 +56,9 @@
                 $controlador->cancelarCitas($_POST["cancelarDocumento"]);
             }else if ($_GET["accion"] == "consultarPaciente") {
                 $controlador->consultarPaciente($_GET["documento"]);
+            } else if ($_GET["accion"] == "ingresarPaciente") {
+                $controlador->agregarPaciente($_GET["pacDocumento"],$_GET["pacNombres"],
+                        $_GET["pacApellidos"],$_GET["pacNacimiento"],$_GET["pacSexo"]);
             } else {
                 $controlador->verPagina('Vista/html/inicio.php');
             }

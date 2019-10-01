@@ -45,4 +45,14 @@ class Controlador {
         require_once "Vista/html/consultarPaciente.php";
     }
 
+    public function agregarPaciente($doc,$nom,$ape,$fec,$sex){
+        $paciente = new Paciente($doc,$nom,$ape,$fec,$sex);
+        $gestorCita = new GestorCita();
+        $registros = $gestorCita->agregarPaciente($paciente);
+        if($registros>0){
+            echo 'Paciente insertado con éxito';
+        }else{
+            echo 'Error al insertar el paciente, intente de nuevo';
+        }
+    }
 }

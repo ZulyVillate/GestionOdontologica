@@ -7,7 +7,13 @@
             <link rel="stylesheet" type="text/css" href="../css/estilos.css"/>
             <script src="http://code.jquery.com/jquery-1.8.1.js" type="text/javascript"></script>
             <script src="../js/script.js" type="text/javascript"></script>
-           
+            <!-- Remember to include jQuery :) -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+
+            <!-- jQuery Modal -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
     </head>
     <body>
         <div id="contenedor">
@@ -34,7 +40,8 @@
                                 <input type="button" name="asignarConsulta" value="Consultar" id="asignarConsultar" onclick="consultarPaciente()"/>
                             </td>
                         </tr>
-                        <tr><td colspan="2"><div id="paciente"></div></td></tr>
+                        <tr><td colspan="2"><div id="paciente"></div></td></tr> 
+                        /////Descargar modal link: https://jqueryui.templersmc.net/download 
                         <tr>
                             <td>Médico</td>
                             <td>
@@ -80,8 +87,37 @@
                 </form>
             </div>
         </div>
-        <?php
-        // put your code here
-        ?>
+        <div id="frmPaciente" title="Agregar nuevo paciente">
+            <form id="agregarPaciente">
+                <table>
+                    <tr>
+                        <td>Documento</td>
+                        <td><input type="text" name="pacDocumento" id="pacDocumento" readonly="readonly"/></td>
+                    </tr>
+                    <tr>
+                        <td>Nombres</td>
+                        <td><input type="text" name="pacNombres" id="pacNombres"/></td>
+                    </tr>
+                    <tr>
+                        <td>Apellidos</td>
+                        <td><input type="text" name="pacApellidos" id="pacApellidos"/></td>
+                    </tr>
+                    <tr>
+                        <td>Fecha de Nacimiento</td>
+                        <td><input type="text" name="pacNacimiento" id="pacNacimiento"/></td>
+                    </tr>
+                    <tr>
+                        <td>Sexo</td>
+                        <td>
+                            <select id="pacSexo" name="pacSexo">
+                                <option value="-1" selected="selected">--Seleccione Sexo--</option>
+                                <option>m</option>
+                                <option>f</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
     </body>
 </html>
