@@ -76,7 +76,7 @@ class GestorCita {
     public function agregarPaciente(Paciente $paciente) {
         $conexion = new Conexion();
         $conexion->abrir();
-        $identificacion = $paciente->obtenerIdentidicacion();
+        $identificacion = $paciente->obtenerIdentificacion();
         $nombres = $paciente->obtenerNombres();
         $apellidos = $paciente->obtenerApellidos();
         $fecha = $paciente->obtenerFechaNacimiento();
