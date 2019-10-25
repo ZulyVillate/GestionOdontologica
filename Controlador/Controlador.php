@@ -55,4 +55,16 @@ class Controlador {
             echo 'Error al insertar el paciente, intente de nuevo';
         }
     }
+    
+    public function cargarAsignar(){
+        $gestorCita = new GestorCita();
+        $result = $gestorCita->ConsultarMedicos();
+        require_once 'Vista/html/asignar.php';
+    }
+    
+    public function consultarHorasDisponibles($medico, $fecha){
+        $gestorCita = new GestorCita();
+        $result = $gestorCita->consultarHorasDisponibles($medico, $fecha);
+        require_once 'Vista/html/consultarHoras.php';
+    }
 }
